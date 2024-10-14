@@ -1,7 +1,7 @@
 <?php
 
 $data = include('extract.php');
-var_dump($data);
+// var_dump($data);
 
 $transformedData = [];
 
@@ -16,8 +16,7 @@ foreach ($data as $entry) {
     if (!isset($shows[$showId])) {
         $shows[$showId] = [
             'id' => $showId,
-            'name' => $entry['_embedded']['show']['name'],
-            'url' => $entry['_embedded']['show']['url']
+            'name' => $entry['_embedded']['show']['name']
         ];
     }
 
@@ -26,21 +25,25 @@ foreach ($data as $entry) {
         'id' => $entry['id'],
         'show_id' => $showId,
         'name' => $entry['name'],
-        'season' => $entry['season'],
-        'number' => $entry['number'],
+            //'season' => $entry['season'],
+            //'number' => $entry['number'],
         'airdate' => $entry['airdate'],
         'airtime' => $entry['airtime'],
-        'runtime' => $entry['runtime'],
+            //'runtime' => $entry['runtime'],
         'average_rating' => $entry['rating']['average']
     ];
 }
 
 // Transformation abgeschlossen, Daten ausgeben oder weiter verarbeiten
-echo "Shows:\n";
-var_dump($shows);
+// echo "Shows:\n";
+// var_dump($shows);
 
-echo "\nEpisodes:\n";
-var_dump($episodes);
+// echo "\nEpisodes:\n";
+// var_dump($episodes);
+
+$transformedData['shows'] = $shows;
+$transformedData['episodes'] = $episodes;
+return $transformedData;
 
 // Optional: Die transformierten Daten können in die Datenbank eingefügt werden
 ?>
