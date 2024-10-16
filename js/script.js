@@ -51,11 +51,49 @@ fetch('etl/unload.php')
 
 
 
-  // Script to make content scroll inside the TV screen as user scrolls
-document.addEventListener('scroll', () => {
-  const content = document.querySelector('.content');
-  const scrollPosition = window.scrollY;
-  content.style.transform = `translateY(-${scrollPosition}px)`;
-});
+
+
+
+
+
+
+  let isTVOn = false; // TV starts off
+
+  function toggleTV() {
+      const tvScreen = document.getElementById('tvScreen');
+      const content = tvScreen.querySelector('.content');
+  
+      if (isTVOn) {
+          // Turn off the TV: fade the screen to black and hide content
+          tvScreen.classList.add('off');
+          content.classList.add('hidden');
+      } else {
+          // Turn on the TV: fade the screen back to transparent and show content
+          tvScreen.classList.remove('off');
+  
+          // Delay removing the hidden class to allow the fade-in transition
+          setTimeout(() => {
+              content.classList.remove('hidden');
+          }, 100); // This slight delay ensures the transition is triggered
+      }
+  
+      isTVOn = !isTVOn; // Toggle the state
+  }
+  
+  // Ensure the TV starts off with content hidden and screen black
+  window.onload = function() {
+      const tvScreen = document.getElementById('tvScreen');
+      const content = tvScreen.querySelector('.content');
+      
+      // Add the "off" and "hidden" classes when the page loads
+      tvScreen.classList.add('off');
+      content.classList.add('hidden');
+      
+      // Remove "no-transition" after a small delay to allow interactions
+      setTimeout(() => {
+          tvScreen.classList.remove('no-transition');
+      }, 100);  // Small delay to make sure initial state is applied before enabling transitions
+  };
+  
 
 

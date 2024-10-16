@@ -14,14 +14,48 @@ html {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 80%;
-    height: 80%;
+    width: 80vw;
+    height: auto;
     display: flex;
     align-items: center;
     justify-content: center;
     z-index: 2000;
 }
 
+.tv-button{
+    position: absolute;
+    top: 5.2%;
+    right: 11.2%;
+    z-index: 3;
+}
+
+.button-image{
+    width: 10vw;
+    height: auto;
+    cursor: pointer;
+    transition: transform 0.1s ease;
+}
+
+.button-image:active {
+    transform: translateY(5px); /* Move the button 4px down when clicked */
+}
+
+.tv-screen.off{
+    background-color: black;
+}
+
+.content {
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out; /* Smooth fade effect for content */
+}
+
+.content.hidden {
+    opacity: 0; /* Fade out content when the TV is "off" */
+}
+
+.no-transition .content, .no-transition.tv-screen {
+    transition: none; /* No transition on page load */
+}
 /* TV image styling */
 .tv {
     width: 100%;
@@ -41,8 +75,13 @@ html {
     position: relative;
     margin-right: 26%;
     overflow: hidden;
+    background-color: transparent; /* Default: transparent when TV is on */
     z-index: 1;
     /* Screen content behind the TV */
+}
+
+.tv-screen:not(.no-transition) {
+    transition: background-color 0.5s ease-in-out; /* Smooth fade effect */
 }
 
 /* Content to scroll inside the TV screen */
@@ -61,7 +100,7 @@ html {
     overflow-y: scroll;
     overflow-x: hidden;
     /* Prevent horizontal scrolling */
-    background: url('/pictures/tv_rauschen.jpg') no-repeat center center;
+    background: url('/pictures/rauschen2.png') no-repeat center center;
     background-size: cover;
 }
 
@@ -97,6 +136,14 @@ html {
     /* Text color for better readability */
 }
 
+.Intro,
+.Fazit,
+.End{
+    padding: 3vw;
+    /* Increase padding around the text */
+    /* Maintain background */
+}
+
 /* DAYTIME, NIGHTTIME, and OVERWATCH specific divs */
 .DAYTIME,
 .NIGHTTIME,
@@ -112,45 +159,68 @@ html {
 }
 
 /* Individual paragraph sections for custom styles */
-.Intro p, .Fazit p, .End p {
+.Intro p,
+.Fazit p,
+.End p {
     display: flex;
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
-    font-size: 2vw; /* Adjust as necessary */
-    background: radial-gradient(circle at center, 
-                rgba(0, 0, 0, 0.7) 40%, 
-                rgba(0, 0, 0, 0.5) 70%, 
-                transparent 100%);
+    justify-content: center;
+    /* Center horizontally */
+    align-items: center;
+    /* Center vertically */
+    font-size: 2vw;
+    /* Adjust as necessary */
+    background: radial-gradient(circle at center,
+            rgba(0, 0, 0, 0.7) 40%,
+            rgba(0, 0, 0, 0.5) 70%,
+            transparent 100%);
     padding: 25px;
-    border-radius: 100px; /* Optional rounded corners */
-    color: white; /* Ensure the text is readable */
-    text-align: center; /* Center the text */
-    line-height: 1.5; /* Improve text readability */
-    width: 90%; /* Adjust the size of the text box */
-    height: 25vw; /* Adjust the height as necessary */
-    margin: 0 auto; /* Center the text block horizontally */
+    border-radius: 100px;
+    /* Optional rounded corners */
+    color: white;
+    /* Ensure the text is readable */
+    text-align: center;
+    /* Center the text */
+    line-height: 1.5;
+    /* Improve text readability */
+    width: 100%;
+    /* Adjust the size of the text box */
+    height: 25vw;
+    /* Adjust the height as necessary */
+    margin: 30 auto;
+    /* Center the text block horizontally */
 }
 
-.DAYTIME{
-    background: radial-gradient(circle at center, 
-    rgba(0, 0, 0, 0.7) 40%, 
-    rgba(0, 0, 0, 0.5) 70%, 
-    transparent 100%);
-    border-radius: 100px; /* Optional rounded corners */
+.Fazit p {
+    height: 20vw;
+    /* Adjust the height as necessary */
 }
 
-.tankratingmorning{
+.End p {
+    margin-top: 30vw;
+    margin-bottom: 14vw;
+    height: 10vw;
+    /* Adjust the height as necessary */
+}
+
+
+.DAYTIME {
+    background: radial-gradient(circle at center,
+            rgba(0, 0, 0, 0.7) 40%,
+            rgba(0, 0, 0, 0.5) 70%,
+            transparent 100%);
+    border-radius: 100px;
+    /* Optional rounded corners */
+}
+
+.tankratingmorning {
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.tankratingmorning img{
+.tankratingmorning img {
     width: 100%;
-   
-  
+
+
 
 }
-
-
-
