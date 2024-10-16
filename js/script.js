@@ -48,3 +48,14 @@ fetch('etl/unload.php')
 
   })
   .catch(error => console.error('Error fetching data:', error));
+
+
+
+  // Script to make content scroll inside the TV screen as user scrolls
+document.addEventListener('scroll', () => {
+  const content = document.querySelector('.content');
+  const scrollPosition = window.scrollY;
+  content.style.transform = `translateY(-${scrollPosition}px)`;
+});
+
+
