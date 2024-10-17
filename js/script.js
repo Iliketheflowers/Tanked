@@ -56,44 +56,76 @@ fetch('etl/unload.php')
 
 
 
-
   let isTVOn = false; // TV starts off
 
+  // Function to toggle the TV on and off
   function toggleTV() {
-      const tvScreen = document.getElementById('tvScreen');
-      const content = tvScreen.querySelector('.content');
+    const tvScreen = document.getElementById('tvScreen');
+    const content = tvScreen.querySelector('.content');
   
-      if (isTVOn) {
-          // Turn off the TV: fade the screen to black and hide content
-          tvScreen.classList.add('off');
-          content.classList.add('hidden');
-      } else {
-          // Turn on the TV: fade the screen back to transparent and show content
-          tvScreen.classList.remove('off');
+    if (isTVOn) {
+      // Turn off the TV: fade the screen to black and hide content
+      tvScreen.classList.add('off');
+      content.classList.add('hidden');
+    } else {
+      // Turn on the TV: fade the screen back to transparent and show content
+      tvScreen.classList.remove('off');
   
-          // Delay removing the hidden class to allow the fade-in transition
-          setTimeout(() => {
-              content.classList.remove('hidden');
-          }, 100); // This slight delay ensures the transition is triggered
-      }
+      // Delay removing the hidden class to allow the fade-in transition
+      setTimeout(() => {
+        content.classList.remove('hidden');
+        // Only place the explosions once the TV is turned on and content is visible
+        getRatingsAndPlaceExplosions();
+      }, 100); // Small delay ensures the transition is triggered
+    }
   
-      isTVOn = !isTVOn; // Toggle the state
+    isTVOn = !isTVOn; // Toggle the state
   }
   
   // Ensure the TV starts off with content hidden and screen black
-  window.onload = function() {
-      const tvScreen = document.getElementById('tvScreen');
-      const content = tvScreen.querySelector('.content');
-      
-      // Add the "off" and "hidden" classes when the page loads
-      tvScreen.classList.add('off');
-      content.classList.add('hidden');
-      
-      // Remove "no-transition" after a small delay to allow interactions
-      setTimeout(() => {
-          tvScreen.classList.remove('no-transition');
-      }, 100);  // Small delay to make sure initial state is applied before enabling transitions
+  window.onload = function () {
+    const tvScreen = document.getElementById('tvScreen');
+    const content = tvScreen.querySelector('.content');
+  
+    // Add the "off" and "hidden" classes when the page loads
+    tvScreen.classList.add('off');
+    content.classList.add('hidden');
   };
   
-
-
+  // Function to place the explosion based on the average rating
+  function placeExplosion(rating, scaleElement, explosionElement) {
+    const scaleWidth = scaleElement.offsetWidth; // Get the width of the scale image
+    const maxRating = 10; // Maximum rating is 10
+    const explosionPosition = (rating / maxRating) * scaleWidth; // Calculate the X position based on the rating
+  
+    // Adjust the left position of the explosion image
+    explosionElement.style.left = `${explosionPosition - (explosionElement.offsetWidth / 2)}px`; // Center explosion
+  }
+  
+  // Function to get the ratings from the HTML and place the explosions
+  function getRatingsAndPlaceExplosions() {
+    // Get the morning and evening ratings from the displayed HTML
+    const morningAvgRating = parseFloat(document.getElementById('morningAvg').textContent);
+    const eveningAvgRating = parseFloat(document.getElementById('eveningAvg').textContent);
+  
+    // Get the morning and evening scale and explosion elements
+    const morningScale = document.querySelector('.morning-bombthrow .scale-image');
+    const eveningScale = document.querySelector('.evening-bombthrow .scale-image');
+    const morningExplosion = document.getElementById('morning-explosion');
+    const eveningExplosion = document.getElementById('evening-explosion');
+  
+    // Place the explosions based on the ratings from the HTML
+    placeExplosion(morningAvgRating, morningScale, morningExplosion);
+    placeExplosion(eveningAvgRating, eveningScale, eveningExplosion);
+  }
+  
+  // Ensure images are loaded before placing explosions
+  window.onload = function () {
+    const tvScreen = document.getElementById('tvScreen');
+    const content = tvScreen.querySelector('.content');
+  
+    // Add the "off" and "hidden" classes when the page loads
+    tvScreen.classList.add('off');
+    content.classList.add('hidden');
+  };
+  

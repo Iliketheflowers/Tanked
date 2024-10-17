@@ -45,6 +45,15 @@ html {
     background-color: black;
 }
 
+#tvScreen {
+    transition: background-color 0.5s ease-in-out; /* Background fade */
+}
+
+#tvScreen.off {
+    background-color: black; /* Screen is black when off */
+    transition: background-color 0.5s ease-in-out;
+}
+
 .content {
     opacity: 1;
     transition: opacity 0.5s ease-in-out;
@@ -177,11 +186,11 @@ html {
     font-size: 2vw;
     /* Adjust as necessary */
     background: radial-gradient(circle at center,
-            rgba(0, 0, 0, 0.7) 40%,
-            rgba(0, 0, 0, 0.5) 70%,
+            rgba(0, 0, 0, 0.8) 40%,
+            rgba(0, 0, 0, 0.6) 70%,
             transparent 100%);
     padding: 25px;
-    border-radius: 200px;
+    border-radius: 80px;
     /* Optional rounded corners */
     color: white;
     /* Ensure the text is readable */
@@ -195,6 +204,7 @@ html {
     /* Adjust the height as necessary */
     margin: auto;
     /* Center the text block horizontally */
+    margin-bottom: 2vw;
 }
 
 .Fazit p {
@@ -271,3 +281,47 @@ html {
     margin: auto;
     z-index: 1;
 }
+
+.throwing-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column; /* Stack the bomb throw images vertically */
+    justify-content: center; /* Vertically center the entire container */
+    align-items: center; /* Horizontally center the images */
+    margin-top: 0;
+}
+
+
+.morning-bombthrow, .evening-bombthrow {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center; /* Center the image within the container */
+    align-items: center;
+    margin-bottom: 2vw;
+
+}
+
+.morning-bombthrow img,
+.evening-bombthrow img{
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.scale-image {
+    width: 100%;
+    height: auto;
+}
+
+.explosion {
+    position: absolute;
+    bottom: 0; /* Keep explosion at the bottom of the image */
+    left: 0; /* Start explosion at the left; position will be adjusted via JS */
+    width: 40%; /* Adjust explosion size as needed */
+    height: auto;
+    z-index: 2;
+}
+
