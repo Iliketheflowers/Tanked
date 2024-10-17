@@ -1,2 +1,15 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+
+Projektbeschreibung
+Unser Projekt zeigt, ob Fernsehsender tagsüber oder abends bessere Filme/Serien ausstrahlen. Es berechnet täglich den Durchschnitt der Zuschauerbewertungen von Fernsehsendern und gibt am Morgen und Abend jeweils den Durchschnittswert an. So können Nutzer sehen, ob am Morgen oder am Abend bessere Unterhaltung im Fernsehen läuft.
+
+Learnings
+Der Umgang mit PHP und wie man damit dynamische Daten verarbeiten kann.
+Die Bedeutung von ETL-Prozessen (Extract, Transform, Load) und warum die Transformation von Daten entscheidend ist, um sie nutzbar zu machen.
+Schwierigkeiten
+Die Gestaltung des Designs war anspruchsvoll, da die Daten nur auf dem Fernsehscreen angezeigt werden sollten.
+Die Codierung der Anzeige war herausfordernd, damit alle Daten korrekt und übersichtlich dargestellt werden.
+Benutzte Ressourcen
+Hauptsächlich haben wir ChatGPT zur Unterstützung bei der Entwicklung und Problemlösung verwendet.
+Weitere Ressourcen: PHP-Dokumentation, API-Dokumentation zur Datenabfrage, HTML/CSS für die Frontend-Gestaltung.

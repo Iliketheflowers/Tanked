@@ -46,12 +46,13 @@ html {
 }
 
 #tvScreen {
-    transition: background-color 0.5s ease-in-out; /* Background fade */
+    transition: background-color 0.5s ease-in-out;
+    /* Background fade */
 }
 
 #tvScreen.off {
-    background-color: black; /* Screen is black when off */
-    transition: background-color 0.5s ease-in-out;
+    background-color: black;
+    /* Screen is black when off */
 }
 
 .content {
@@ -132,7 +133,8 @@ html {
     margin-top: -5%;
     /* Keep the image centered */
     margin-left: -35%;
-    mask-image: linear-gradient(to bottom, black 70%, transparent 95%);
+    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 70%, rgba(0, 0, 0, 0) 95%);
+    /* Ensure transparency at the bottom of the image */
 }
 
 /* Paragraph styling for text fields */
@@ -160,6 +162,22 @@ html {
     /* Increase padding around the text */
 }
 
+.Intro p,
+.Fazit p,
+.End p {
+
+    background: radial-gradient(circle at center,
+            rgba(0, 0, 0, 0.8) 40%,
+            rgba(0, 0, 0, 0.6) 70%,
+            transparent 100%);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+    border-radius: 100px;
+
+}
+
+
+
 /* DAYTIME, NIGHTTIME, and OVERWATCH specific divs */
 .DAYTIME,
 .NIGHTTIME,
@@ -167,75 +185,18 @@ html {
     padding: 30px;
     /* Increase padding around the text */
     background-color: rgba(0, 0, 0, 0.7);
+    background: radial-gradient(circle at center,
+            rgba(0, 0, 0, 0.8) 40%,
+            rgba(0, 0, 0, 0.6) 70%,
+            transparent 100%);
     /* Maintain background */
     border-radius: 10px;
     /* Ensure consistent rounded corners */
     margin: 20px 0;
     /* Add space between the sections */
-}
-
-/* Individual paragraph sections for custom styles */
-.Intro p,
-.Fazit p,
-.End p {
-    display: flex;
-    justify-content: center;
-    /* Center horizontally */
-    align-items: center;
-    /* Center vertically */
-    font-size: 2vw;
-    /* Adjust as necessary */
-    background: radial-gradient(circle at center,
-            rgba(0, 0, 0, 0.8) 40%,
-            rgba(0, 0, 0, 0.6) 70%,
-            transparent 100%);
-    padding: 25px;
-    border-radius: 80px;
-    /* Optional rounded corners */
-    color: white;
-    /* Ensure the text is readable */
-    text-align: center;
-    /* Center the text */
-    line-height: 1.5;
-    /* Improve text readability */
-    width: 90%;
-    /* Adjust the size of the text box */
-    height: 25vw;
-    /* Adjust the height as necessary */
-    margin: auto;
-    /* Center the text block horizontally */
-    margin-bottom: 2vw;
-}
-
-.Fazit p {
-    height: 20vw;
-    /* Adjust the height as necessary */
-}
-
-.End p {
-    margin-top: 30vw;
-    margin-bottom: 14vw;
-    height: 10vw;
-    /* Adjust the height as necessary */
-}
-
-
-.DAYTIME,
-.NIGHTTIME,
-.OVERWATCH {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    background: radial-gradient(circle at center,
-            rgba(0, 0, 0, 0.7) 40%,
-            rgba(0, 0, 0, 0.5) 70%,
-            transparent 100%);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     border-radius: 100px;
-
-  
-    /* Optional rounded corners */
 }
-
 
 .DAYTIME img,
 .NIGHTTIME img {
@@ -246,13 +207,10 @@ html {
 .DAYTIME p,
 .NIGHTTIME p,
 .OVERWATCH p {
-
     font-size: 3vw;
     margin: 0;
     padding: 0;
-
     margin-top: 1.5vw;
-
 }
 
 .rating-container {
@@ -271,7 +229,7 @@ html {
 
 .rating-text {
     position: absolute;
-    right: 9%;
+    right: 7%;
     /* Adjust this to position over the bomb */
     bottom: 38%;
     /* Adjust this to vertically align with the bomb */
@@ -285,25 +243,27 @@ html {
 .throwing-container {
     width: 100%;
     display: flex;
-    flex-direction: column; /* Stack the bomb throw images vertically */
-    justify-content: center; /* Vertically center the entire container */
-    align-items: center; /* Horizontally center the images */
+    flex-direction: column;
+    /* Stack the bomb throw images vertically */
+    justify-content: center;
+    /* Vertically center the entire container */
+    align-items: center;
+    /* Horizontally center the images */
     margin-top: 0;
 }
 
-
-.morning-bombthrow, .evening-bombthrow {
+.morning-bombthrow,
+.evening-bombthrow {
     position: relative;
     width: 100%;
     display: flex;
-    justify-content: center; /* Center the image within the container */
+    justify-content: center;
     align-items: center;
     margin-bottom: 2vw;
-
 }
 
 .morning-bombthrow img,
-.evening-bombthrow img{
+.evening-bombthrow img {
     width: 100%;
     max-width: 100%;
     height: auto;
@@ -318,10 +278,14 @@ html {
 
 .explosion {
     position: absolute;
-    bottom: 0; /* Keep explosion at the bottom of the image */
-    left: 0; /* Start explosion at the left; position will be adjusted via JS */
-    width: 40%; /* Adjust explosion size as needed */
+    bottom: 0;
+    /* Keep explosion at the bottom of the image */
+    width: 40%;
+    /* Adjust explosion size as needed */
     height: auto;
     z-index: 2;
+    left: 0;
+    /* Dynamically adjusted by JavaScript */
+    transform: translateX(-50%);
+    /* Center the explosion horizontally */
 }
-
