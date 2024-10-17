@@ -30,8 +30,8 @@ foreach ($shows as $show) {
     ]);
 }
 
-// Now inserting into the Episodes table (lowercase 'episodes' as per transform.php)
-$episodes = $transformedData['episodes']; // Changed 'Episodes' to 'episodes'
+// Now inserting into the Episodes table
+$episodes = $transformedData['episodes']; 
 
 // Prepare an SQL statement for inserting episodes
 $insertEpisodeStmt = $pdo->prepare("

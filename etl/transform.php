@@ -25,21 +25,14 @@ foreach ($data as $entry) {
         'id' => $entry['id'],
         'show_id' => $showId,
         'name' => $entry['name'],
-            //'season' => $entry['season'],
-            //'number' => $entry['number'],
         'airdate' => $entry['airdate'],
         'airtime' => $entry['airtime'],
-            //'runtime' => $entry['runtime'],
         'average_rating' => $entry['rating']['average']
     ];
 }
 
 // Transformation abgeschlossen, Daten ausgeben oder weiter verarbeiten
-// echo "Shows:\n";
-// var_dump($shows);
 
-// echo "\nEpisodes:\n";
-// var_dump($episodes);
 
 $transformedData['shows'] = $shows;
 $transformedData['episodes'] = $episodes;
