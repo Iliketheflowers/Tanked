@@ -1,11 +1,11 @@
 # Tanked
 
-Dieses Projekt zeigt auf, ob Fernsehsender tagsüber oder abends bessere Filme und Serien ausstrahlen. Dazu werden täglich die durchschnittlichen Zuschauerbewertungen von Fernsehsendungen berechnet. Der Durchschnitt wird jeweils für den Morgen/Tag und den Abend angezeigt, um herauszufinden, ob das Fernsehprogramm zu einer bestimmten Tageszeit qualitativ hochwertiger ist. Die Ergebnisse werden visuell in einem TV-Interface dargestellt.
+Dieses Projekt zeigt auf, ob Fernsehsender tagsüber oder abends bessere Filme und Serien ausstrahlen. Dazu werden täglich die durchschnittlichen Zuschauerbewertungen von Fernsehsendungen berechnet. Der Durchschnitt wird jeweils Tagsüber und für den Abend angezeigt, um herauszufinden, ob das Fernsehprogramm zu einer bestimmten Tageszeit qualitativ hochwertiger ist. Die Ergebnisse werden visuell in einem TV-Interface dargestellt.
 
 ## Learnings
 
 - Anwendung und Nutzung von PHP zur Datenabfrage und -verarbeitung.
-- Verständnis für die Bedeutung von ETL-Prozessen (Extract, Transform, Load), insbesondere die Transformation der Daten für korrekte Analysen.
+- Verständnis für die Bedeutung von ETL-Prozessen (Extract, Transform, Load), insbesondere die Transformation der Daten.
 - Umgang mit Frontend-Design in Verbindung mit dynamischen Daten und deren Anzeige in einem festgelegten Bereich (dem TV-Screen).
 
 ## Schwierigkeiten
@@ -16,6 +16,5 @@ Dieses Projekt zeigt auf, ob Fernsehsender tagsüber oder abends bessere Filme u
 ## Benutzte Ressourcen
 
 - PHP zur Datenverarbeitung und für API-Anfragen.
-- HTML/CSS für das Layout und Design der TV-Visualisierung.
-- JavaScript für die dynamische Anzeige der Ratings und Steuerung des TV-Screens.
 - ChatGPT als Hilfsmittel zur Unterstützung bei Codierung und Debugging.
+- Infomaniak für den Server
