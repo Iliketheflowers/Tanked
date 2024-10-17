@@ -38,7 +38,6 @@ html {
 
 .button-image:active {
     transform: translateY(5px);
-    /* Move the button 4px down when clicked */
 }
 
 .tv-screen.off {
@@ -47,69 +46,54 @@ html {
 
 #tvScreen {
     transition: background-color 0.5s ease-in-out;
-    /* Background fade */
 }
 
 #tvScreen.off {
     background-color: black;
-    /* Screen is black when off */
 }
 
 .content {
     opacity: 1;
     transition: opacity 0.5s ease-in-out;
-    /* Smooth fade effect for content */
 }
 
 .content.hidden {
     opacity: 0;
-    /* Fade out content when the TV is "off" */
 }
 
 .no-transition .content,
 .no-transition.tv-screen {
     transition: none;
-    /* No transition on page load */
 }
 
-/* TV image styling */
 .tv {
     width: 100%;
     height: auto;
     position: absolute;
     z-index: 2;
-    /* TV stays on top */
     pointer-events: none;
-    /* Allow interactions with content behind TV */
 }
 
-/* TV screen where content will scroll */
 .tv-screen {
     width: 63%;
-    /* Make sure the screen width is appropriate */
     height: 50vw;
     position: relative;
     margin-right: 26%;
     overflow: hidden;
     background-color: transparent;
-    /* Default: transparent when TV is on */
     z-index: 1;
-    /* Screen content behind the TV */
 }
 
 .tv-screen:not(.no-transition) {
     transition: background-color 0.5s ease-in-out;
-    /* Smooth fade effect */
 }
 
-/* Content to scroll inside the TV screen */
 .content {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    /* Ensure it takes the full height of the TV screen */
     padding: 20px;
     box-sizing: border-box;
     color: whitesmoke;
@@ -117,49 +101,34 @@ html {
     line-height: 1.5;
     overflow-y: scroll;
     overflow-x: hidden;
-    /* Prevent horizontal scrolling */
     background: url('/pictures/rauschen2.png') no-repeat center center;
     background-size: cover;
 }
 
-/* Adjust the size of the specific image within the content */
 .content img {
     width: 170%;
-    /* Increase the width to make the image slightly larger */
     height: auto;
     max-width: none;
-    /* Allow the image to exceed 100% width slightly */
     display: block;
     margin-top: -5%;
-    /* Keep the image centered */
     margin-left: -35%;
     mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 70%, rgba(0, 0, 0, 0) 95%);
-    /* Ensure transparency at the bottom of the image */
 }
 
-/* Paragraph styling for text fields */
 .content p {
     margin: 30px 0;
-    /* Increase margin to visually separate paragraphs */
     padding: 20px;
-    /* Add more padding to make text fields bigger */
     border-radius: 10px;
-    /* Rounded corners for a modern look */
     text-align: center;
-    /* Center the text */
     max-width: 90%;
-    /* Ensure text doesn't overflow the screen */
     font-size: 1.8vw;
-    /* Larger font size for emphasis */
     color: whitesmoke;
-    /* Text color for better readability */
 }
 
 .Intro,
 .Fazit,
 .End {
-    padding: 3vw;
-    /* Increase padding around the text */
+    padding: 10vw;
 }
 
 .Intro p,
@@ -176,24 +145,22 @@ html {
 
 }
 
+.End p {
+    margin-top: 10vw;
+    margin-bottom: 10vw;
+}
 
-
-/* DAYTIME, NIGHTTIME, and OVERWATCH specific divs */
 .DAYTIME,
 .NIGHTTIME,
 .OVERWATCH {
     padding: 30px;
-    /* Increase padding around the text */
     background-color: rgba(0, 0, 0, 0.7);
     background: radial-gradient(circle at center,
             rgba(0, 0, 0, 0.8) 40%,
             rgba(0, 0, 0, 0.6) 70%,
             transparent 100%);
-    /* Maintain background */
     border-radius: 10px;
-    /* Ensure consistent rounded corners */
     margin: 20px 0;
-    /* Add space between the sections */
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     border-radius: 100px;
 }
@@ -230,9 +197,7 @@ html {
 .rating-text {
     position: absolute;
     right: 7%;
-    /* Adjust this to position over the bomb */
     bottom: 38%;
-    /* Adjust this to vertically align with the bomb */
     color: white;
     font-size: 2.5vw;
     text-align: center;
@@ -244,11 +209,8 @@ html {
     width: 100%;
     display: flex;
     flex-direction: column;
-    /* Stack the bomb throw images vertically */
     justify-content: center;
-    /* Vertically center the entire container */
     align-items: center;
-    /* Horizontally center the images */
     margin-top: 0;
 }
 
@@ -279,13 +241,9 @@ html {
 .explosion {
     position: absolute;
     bottom: 0;
-    /* Keep explosion at the bottom of the image */
     width: 40%;
-    /* Adjust explosion size as needed */
     height: auto;
     z-index: 2;
     left: 0;
-    /* Dynamically adjusted by JavaScript */
     transform: translateX(-50%);
-    /* Center the explosion horizontally */
 }
