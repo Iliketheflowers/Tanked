@@ -155,7 +155,7 @@ html {
 .DAYTIME,
 .NIGHTTIME,
 .OVERWATCH {
-    padding: 40px;
+    padding: 30px;
     /* Increase padding around the text */
     background-color: rgba(0, 0, 0, 0.7);
     /* Maintain background */
@@ -221,6 +221,8 @@ html {
             rgba(0, 0, 0, 0.5) 70%,
             transparent 100%);
     border-radius: 100px;
+
+  
     /* Optional rounded corners */
 }
 
@@ -228,13 +230,44 @@ html {
 .DAYTIME img,
 .NIGHTTIME img {
     margin: auto;
-    width: 100%;
+    width: 107%;
 }
 
 .DAYTIME p,
 .NIGHTTIME p,
-.OVERWATCH p{
+.OVERWATCH p {
 
     font-size: 3vw;
+    margin: 0;
+    padding: 0;
 
+    margin-top: 1.5vw;
+
+}
+
+.rating-container {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0;
+}
+
+.daytime-image {
+    width: 100%;
+    height: auto;
+}
+
+.rating-text {
+    position: absolute;
+    right: 9%;
+    /* Adjust this to position over the bomb */
+    bottom: 38%;
+    /* Adjust this to vertically align with the bomb */
+    color: white;
+    font-size: 2.5vw;
+    text-align: center;
+    margin: auto;
+    z-index: 1;
 }
