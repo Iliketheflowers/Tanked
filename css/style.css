@@ -22,14 +22,14 @@ html {
     z-index: 2000;
 }
 
-.tv-button{
+.tv-button {
     position: absolute;
     top: 5.2%;
     right: 11.2%;
     z-index: 3;
 }
 
-.button-image{
+.button-image {
     width: 10vw;
     height: auto;
     cursor: pointer;
@@ -37,25 +37,31 @@ html {
 }
 
 .button-image:active {
-    transform: translateY(5px); /* Move the button 4px down when clicked */
+    transform: translateY(5px);
+    /* Move the button 4px down when clicked */
 }
 
-.tv-screen.off{
+.tv-screen.off {
     background-color: black;
 }
 
 .content {
     opacity: 1;
-    transition: opacity 0.5s ease-in-out; /* Smooth fade effect for content */
+    transition: opacity 0.5s ease-in-out;
+    /* Smooth fade effect for content */
 }
 
 .content.hidden {
-    opacity: 0; /* Fade out content when the TV is "off" */
+    opacity: 0;
+    /* Fade out content when the TV is "off" */
 }
 
-.no-transition .content, .no-transition.tv-screen {
-    transition: none; /* No transition on page load */
+.no-transition .content,
+.no-transition.tv-screen {
+    transition: none;
+    /* No transition on page load */
 }
+
 /* TV image styling */
 .tv {
     width: 100%;
@@ -75,13 +81,15 @@ html {
     position: relative;
     margin-right: 26%;
     overflow: hidden;
-    background-color: transparent; /* Default: transparent when TV is on */
+    background-color: transparent;
+    /* Default: transparent when TV is on */
     z-index: 1;
     /* Screen content behind the TV */
 }
 
 .tv-screen:not(.no-transition) {
-    transition: background-color 0.5s ease-in-out; /* Smooth fade effect */
+    transition: background-color 0.5s ease-in-out;
+    /* Smooth fade effect */
 }
 
 /* Content to scroll inside the TV screen */
@@ -138,10 +146,9 @@ html {
 
 .Intro,
 .Fazit,
-.End{
+.End {
     padding: 3vw;
     /* Increase padding around the text */
-    /* Maintain background */
 }
 
 /* DAYTIME, NIGHTTIME, and OVERWATCH specific divs */
@@ -174,7 +181,7 @@ html {
             rgba(0, 0, 0, 0.5) 70%,
             transparent 100%);
     padding: 25px;
-    border-radius: 100px;
+    border-radius: 200px;
     /* Optional rounded corners */
     color: white;
     /* Ensure the text is readable */
@@ -182,11 +189,11 @@ html {
     /* Center the text */
     line-height: 1.5;
     /* Improve text readability */
-    width: 100%;
+    width: 90%;
     /* Adjust the size of the text box */
     height: 25vw;
     /* Adjust the height as necessary */
-    margin: 30 auto;
+    margin: auto;
     /* Center the text block horizontally */
 }
 
@@ -203,7 +210,12 @@ html {
 }
 
 
-.DAYTIME {
+.DAYTIME,
+.NIGHTTIME,
+.OVERWATCH {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
     background: radial-gradient(circle at center,
             rgba(0, 0, 0, 0.7) 40%,
             rgba(0, 0, 0, 0.5) 70%,
@@ -212,15 +224,17 @@ html {
     /* Optional rounded corners */
 }
 
-.tankratingmorning {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+
+.DAYTIME img,
+.NIGHTTIME img {
+    margin: auto;
+    width: 100%;
 }
 
-.tankratingmorning img {
-    width: 100%;
+.DAYTIME p,
+.NIGHTTIME p,
+.OVERWATCH p{
 
-
+    font-size: 3vw;
 
 }
