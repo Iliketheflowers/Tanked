@@ -127,7 +127,7 @@ html {
 .Intro,
 .Fazit,
 .End {
-    padding: 10vw;
+    padding: 5vw;
 }
 
 .Intro p,
@@ -136,11 +136,12 @@ html {
 
     background: radial-gradient(circle at center,
             rgba(0, 0, 0, 0.8) 40%,
-            rgba(0, 0, 0, 0.6) 70%,
+            rgba(0, 0, 0, 0.7) 70%,
             transparent 100%);
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 
-    border-radius: 100px;
+    border-radius: 3vw;
+    padding: 2vw;
 
 }
 
