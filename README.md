@@ -18,3 +18,4 @@ Dieses Projekt zeigt auf, ob Fernsehsender tagsüber oder abends bessere Filme u
 - PHP zur Datenverarbeitung und für API-Anfragen.
 - ChatGPT als Hilfsmittel zur Unterstützung bei Codierung und Debugging.
 - Infomaniak für den Server
+- Crontool für das Abrufen der Daten in Zeitintervallen
