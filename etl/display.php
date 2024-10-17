@@ -1,8 +1,8 @@
 <?php
-// Path to the JSON file (ensure the path is correct)
+// Path to the JSON file
 $jsonFilePath = 'summarized_ratings.json';
 
-// Check if the file exists before reading
+
 if (file_exists($jsonFilePath)) {
     // Read the JSON file contents
     $jsonData = file_get_contents($jsonFilePath);
