@@ -12,7 +12,8 @@ try {
     $stmt = $pdo->prepare("
         SELECT show_id, name, airdate, airtime, average_rating
         FROM Episodes
-        ORDER BY airdate DESC, airtime DESC
+        ORDER BY airdate ASC, airtime ASC
+        LIMIT 200000;
     ");
 
     // Execute the query
